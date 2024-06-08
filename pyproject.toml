@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "airflow-poc"
+version = "0.1.0"
+description = ""
+authors = ["안성철 <scahn@huray.net>"]
+readme = "README.md"
+packages = [{include = "airflow_poc"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+apache-airflow = "^2.9.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = "airflow-poc"
+known_third_party = "airflow"
